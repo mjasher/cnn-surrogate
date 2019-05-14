@@ -1,3 +1,17 @@
+# MJA Notes
+build
+```
+docker build -t cnn-surrogate .
+```
+
+Run pre-trained example
+```
+docker run -it -v $PWD:/shared -w /shared cnn-surrogate bash ./scripts/download_dataset.sh 4225
+docker run -it -v $PWD:/shared -w /shared cnn-surrogate bash ./scripts/download_checkpoints.sh 4225 256
+docker run -it -v $PWD:/shared -w /shared cnn-surrogate python post_proc.py --post --kle 4225 --ntrain 256
+```
+
+
 # Bayesian Surrogate as Image-to-Image Regression
 
 [Bayesian Deep Convolutional Encoder-Decoder Networks for Surrogate Modeling and Uncertainty Quantification](https://doi.org/10.1016/j.jcp.2018.04.018)
