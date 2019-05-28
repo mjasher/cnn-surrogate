@@ -1,5 +1,5 @@
 # MJA Notes
-build
+Build
 ```
 docker build -t cnn-surrogate .
 ```
@@ -11,6 +11,10 @@ docker run -it -v $PWD:/shared -w /shared cnn-surrogate bash ./scripts/download_
 docker run -it -v $PWD:/shared -w /shared cnn-surrogate python post_proc.py --post --kle 4225 --ntrain 256
 ```
 
+Train deterministic
+```
+docker run -it -v $PWD:/shared -w /shared cnn-surrogate python train_det.py --kle 4225 --ntrain 256
+```
 
 # Bayesian Surrogate as Image-to-Image Regression
 
